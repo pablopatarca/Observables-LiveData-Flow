@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.sp
 import app.pablopatarca.observables.ui.theme.ObservablesTheme
 
 @Composable
-fun MainScreen(
-    state: State<String>,
+fun LabelButtonScreenComponent(
+    labelState: State<String>,
     buttonName: String,
     onClick: () -> Unit
 ){
@@ -28,7 +28,7 @@ fun MainScreen(
     ) {
 
         Text(
-            text = state.value,
+            text = labelState.value,
             modifier = Modifier.fillMaxWidth(),
             fontSize = 16.sp,
             textAlign = Center
@@ -50,7 +50,7 @@ fun MainScreen(
 @Composable
 fun DefaultPreview() {
     ObservablesTheme {
-        MainScreen(
+        LabelButtonScreenComponent(
             remember{mutableStateOf("...")},
             "Button"
         ) {
